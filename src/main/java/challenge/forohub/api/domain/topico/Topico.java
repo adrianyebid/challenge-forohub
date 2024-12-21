@@ -7,8 +7,6 @@ import lombok.EqualsAndHashCode;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
-//@NoArgsConstructor
-//@Getter
 @EqualsAndHashCode(of = "id")
 @Table(name = "topicos")
 @Entity(name = "Topico")
@@ -79,7 +77,4 @@ public class Topico {
     public NombreCurso getCurso() {
         return curso;
     }
-
-
-
 }

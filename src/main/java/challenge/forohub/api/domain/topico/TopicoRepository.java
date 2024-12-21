@@ -6,8 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.Optional;
-
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
 
 
@@ -21,7 +19,6 @@ public interface TopicoRepository extends JpaRepository<Topico, Long> {
     @Query(value = "SELECT * FROM topicos WHERE YEAR(fecha) = :year AND curso = :nombre", nativeQuery = true)
     Page<Topico> findByCursoAndFecha(@Param("nombre") NombreCurso nombre, @Param("year") int year, Pageable paginacion);
 
-    @Query("SELECT t FROM Topico t WHERE t.id =:id")
-    Optional<Topico> findById(Long id);
+
 
 }
